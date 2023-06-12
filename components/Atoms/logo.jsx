@@ -5,7 +5,7 @@ import { fontMono } from "@/lib/fonts";
 
 export default function Logo() {
   return (
-    <Link href="/" className="flex items-center space-x-2 mr-5">
+    <Link href="/" className={`flex items-center space-x-2 mr-5`}>
       <div className="relative hover:text-[#00A8A3] duration-100">
         <Icons.clip className="absolute bottom-0 h-[35px] w-[35px]" />
         <Icons.cat className="h-[35px] w-[35px]" />
