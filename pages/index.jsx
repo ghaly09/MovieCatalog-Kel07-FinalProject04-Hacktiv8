@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { useDispatch } from "react-redux";
 import { fetchDataMovie } from "@/redux/slices/slice-search";
 import { SearchHome } from "@/components/Molecules/search-Home";
+import CardMovie from "@/components/Templates/CardMovie/CardMovie";
 
 const poppins = Poppins({
   weight: "400",
@@ -36,6 +37,20 @@ export default function Home() {
         >
           Get Data
         </button>
+        <div className="flex flex-row justify-between">
+          <div className="font-semibold text-[22px] text-black mb-4">
+            Movies
+          </div>
+          <div className="font-semibold text-lg text-black mb-4">See all</div>
+        </div>
+        <div className="grid grid-rows-1 grid-cols-4 gap-5">
+          <CardMovie/>
+          <CardMovie/>
+          <CardMovie/>
+          <CardMovie/>
+          <CardMovie/>
+          <CardMovie/>
+        </div>
       </div>
     </section>
   );
