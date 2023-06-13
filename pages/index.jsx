@@ -1,19 +1,22 @@
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { useDispatch } from "react-redux";
-import { fetchDataMovie } from "@/redux/slices/slice-search";
+// import { fetchDataMovie } from "@/redux/slices/slice-search";
 import { SearchHome } from "@/components/Molecules/search-Home";
+import axios from "axios";
+import Data from "@/utils/API/Base-API";
+import dataHomePage from "@/utils/Data/homepage";
 
 const poppins = Poppins({
   weight: "400",
   subsets: ["latin"],
 });
 
-export default function Home() {
+export default function Home({ dataMovies }) {
   const dispatch = useDispatch();
 
   const handleGetData = () => {
-    dispatch(fetchDataMovie("s=movie&page=2"));
+    // dispatch(fetchDataMovie("t=spiderman&plot=full"));
   };
 
   return (
@@ -36,7 +39,34 @@ export default function Home() {
         >
           Get Data
         </button>
+        <p>{JSON.stringify(dataMovies)}</p>
       </div>
     </section>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const dataMovies = await Promise.all(
+      dataHomePage.map(async (movie) => {
+        const res = await axios.get(Data(`t=${movie}&plot=full`));
+        return res.data;
+      })
+    );
+
+    // console.log(dataMovies);
+
+    return {
+      props: {
+        dataMovies,
+      },
+    };
+  } catch (error) {
+    console.log("errorFetchingAPI", error);
+    return {
+      props: {
+        dataMovies: [],
+      },
+    };
+  }
 }
