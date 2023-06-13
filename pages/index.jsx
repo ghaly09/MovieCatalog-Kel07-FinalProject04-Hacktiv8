@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { useDispatch } from "react-redux";
-import { fetchDataMovie } from "@/redux/slices/slice-search";
+// import { fetchDataMovie } from "@/redux/slices/slice-search";
 import { SearchHome } from "@/components/Molecules/search-Home";
+import axios from "axios";
+import Data from "@/utils/API/Base-API";
+import dataHomePage from "@/utils/Data/homepage";
 import CardMovie from "@/components/Templates/CardMovie/CardMovie";
 
 const poppins = Poppins({
@@ -10,11 +13,11 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-export default function Home() {
+export default function Home({ dataMovies }) {
   const dispatch = useDispatch();
 
   const handleGetData = () => {
-    dispatch(fetchDataMovie("s=movie&page=2"));
+    // dispatch(fetchDataMovie("t=spiderman&plot=full"));
   };
 
   return (
@@ -31,12 +34,7 @@ export default function Home() {
           </h1>
           <SearchHome />
         </div>
-        <button
-          className="border-2 bg-green-700 text-white rounded-lg"
-          onClick={handleGetData}
-        >
-          Get Data
-        </button>
+
         <div className="flex flex-row justify-between">
           <div className="font-semibold text-[22px] text-black mb-4">
             Movies
@@ -44,14 +42,43 @@ export default function Home() {
           <div className="font-semibold text-lg text-black mb-4">See all</div>
         </div>
         <div className="grid grid-rows-1 grid-cols-4 gap-5">
-          <CardMovie/>
-          <CardMovie/>
-          <CardMovie/>
-          <CardMovie/>
-          <CardMovie/>
-          <CardMovie/>
+          {dataMovies.map((film) => (
+            <CardMovie
+              urlImage={film?.Poster}
+              title={film?.Title}
+              year={film?.Year}
+              rating={film?.imdbRating}
+              key={film?.imdbID}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const dataMovies = await Promise.all(
+      dataHomePage.map(async (movie) => {
+        const res = await axios.get(Data(`t=${movie}&plot=full`));
+        return res.data;
+      })
+    );
+
+    // console.log(dataMovies);
+
+    return {
+      props: {
+        dataMovies,
+      },
+    };
+  } catch (error) {
+    console.log("errorFetchingAPI", error);
+    return {
+      props: {
+        dataMovies: [],
+      },
+    };
+  }
 }

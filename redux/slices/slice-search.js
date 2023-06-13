@@ -8,7 +8,7 @@ export const fetchDataMovie = createAsyncThunk(
   async (query) => {
     try {
       const response = await axios.get(Data(query));
-      return response.data.Search;
+      return response.data;
     } catch (error) {
       console.log("errorFetchingAPI", error);
     }
