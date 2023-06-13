@@ -34,13 +34,7 @@ export default function Home({ dataMovies }) {
           </h1>
           <SearchHome />
         </div>
-        <button
-          className="border-2 bg-green-700 text-white rounded-lg"
-          onClick={handleGetData}
-        >
-          Get Data
-        </button>
-        <p>{JSON.stringify(dataMovies)}</p>
+
         <div className="flex flex-row justify-between">
           <div className="font-semibold text-[22px] text-black mb-4">
             Movies
@@ -48,12 +42,15 @@ export default function Home({ dataMovies }) {
           <div className="font-semibold text-lg text-black mb-4">See all</div>
         </div>
         <div className="grid grid-rows-1 grid-cols-4 gap-5">
-          <CardMovie />
-          <CardMovie />
-          <CardMovie />
-          <CardMovie />
-          <CardMovie />
-          <CardMovie />
+          {dataMovies.map((film) => (
+            <CardMovie
+              urlImage={film?.Poster}
+              title={film?.Title}
+              year={film?.Year}
+              rating={film?.imdbRating}
+              key={film?.imdbID}
+            />
+          ))}
         </div>
       </div>
     </section>
