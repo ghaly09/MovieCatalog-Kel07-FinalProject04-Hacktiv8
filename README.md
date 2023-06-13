@@ -1,4 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Final Project 04 Kel.07
+
+# [ MovieCat (Movie Catalog) ]
+
+This is The Final Project for Hacktiv8 by Making The Web Movie Catalog using NEXT.JS
+
+## 👨‍💻 Team
+
+| Author            | Nim Hacktiv8  |
+| ----------------- | ------------- |
+| Rachmat Ghaly     | RCTN-KS07-015 |
+| Laili Cahyani     | RCTN-KS07-007 |
+| Dika Rahman Rifai | RCTN-KS07-018 |
+
+## 🛠️ Tech Stack & Tools
+
+- Next.Js
+- Redux Toolkit
+- Redux Persist
+- Tailwind CSS
+- JavaScript & TypeScript
+- Self Components
+- API from https://www.omdbapi.com/
+
+## Preview
 
 ## Getting Started
 
