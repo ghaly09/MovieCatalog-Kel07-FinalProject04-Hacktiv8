@@ -6,6 +6,7 @@ import { SearchHome } from "@/components/Molecules/search-Home";
 import axios from "axios";
 import Data from "@/utils/API/Base-API";
 import dataHomePage from "@/utils/Data/homepage";
+import CardMovie from "@/components/Templates/CardMovie/CardMovie";
 
 const poppins = Poppins({
   weight: "400",
@@ -40,6 +41,20 @@ export default function Home({ dataMovies }) {
           Get Data
         </button>
         <p>{JSON.stringify(dataMovies)}</p>
+        <div className="flex flex-row justify-between">
+          <div className="font-semibold text-[22px] text-black mb-4">
+            Movies
+          </div>
+          <div className="font-semibold text-lg text-black mb-4">See all</div>
+        </div>
+        <div className="grid grid-rows-1 grid-cols-4 gap-5">
+          <CardMovie />
+          <CardMovie />
+          <CardMovie />
+          <CardMovie />
+          <CardMovie />
+          <CardMovie />
+        </div>
       </div>
     </section>
   );
