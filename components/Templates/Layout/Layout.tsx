@@ -11,7 +11,7 @@ export const Layout = (props: LayoutProps) => {
   return (
     <main className="flex flex-col items-center">
       <Header />
-      <div className="max-w-[1500px] w-[1200px]">
+      <div className="max-w-[1500px] lg:w-[1200px]">
         <div>{children}</div>
       </div>
       <Footer />
