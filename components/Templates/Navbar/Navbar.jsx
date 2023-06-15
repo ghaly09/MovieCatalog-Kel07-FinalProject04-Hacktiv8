@@ -3,17 +3,29 @@ import NavLink from "@/components/Atoms/nav-link";
 import FavButton from "@/components/Molecules/favorite-button";
 import NavSearch from "@/components/Molecules/search-nav";
 import { poppins } from "@/lib/fonts";
+import { fetchDataSearch } from "@/redux/slices/slice-search";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { DropdownProfileMenu } from "@/components/Molecules/profile-menu";
 
 export const Navbar = () => {
+  const dispatch = useDispatch();
   const [value, setValue] = useState("");
   const router = useRouter();
 
   const handle = (event) => {
     if (event.key === "Enter") {
+      dispatch(
+        fetchDataSearch(
+          `search/movie?query=${value.toLowerCase()}&include_adult=false&language=en-US&page=1`
+        )
+      );
       router.push(`/${value.toLowerCase()}`);
+      setTimeout(() => {
+        setValue("");
+      }, 10000);
     }
   };
 
@@ -44,9 +56,7 @@ export const Navbar = () => {
         <Link href={"/favorite"}>
           <FavButton />
         </Link>
-        <Link href={"/"}>
-          <i className="far fa-user-circle text-3xl" aria-hidden="true"></i>
-        </Link>
+        <DropdownProfileMenu />
       </div>
     </nav>
   );
