@@ -3,7 +3,9 @@ import { persistReducer } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 import storageSession from "redux-persist/lib/storage/session";
 import { createWrapper } from "next-redux-wrapper";
-import movieReducer from "../slices/slice-search";
+import searchReducer from "../slices/slice-search";
+import favoriteReducer from "../slices/slice-favorite";
+import detailReducer from "../slices/slice-detail";
 
 const persistConfig = {
   key: "root",
@@ -12,7 +14,9 @@ const persistConfig = {
 };
 
 const rootReducers = combineReducers({
-  movie: movieReducer,
+  search: searchReducer,
+  favorite: favoriteReducer,
+  detail: detailReducer,
 });
 
 const persist = persistReducer(persistConfig, rootReducers);
