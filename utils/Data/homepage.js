@@ -9,6 +9,8 @@ const dataHomePage = [
   "avengers",
   "venom",
   "ant-man",
+  "the-matrix",
+  "pacific-rim",
 ];
 
 export default dataHomePage;
