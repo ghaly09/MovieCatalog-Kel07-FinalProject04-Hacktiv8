@@ -2,7 +2,13 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
 import CardMovie from "../Templates/Card/CardMovie";
 
-export function TabsSortBy({ dataTrending, dataPopular, dataUpcoming }) {
+interface Types {
+  dataTrending: [object];
+  dataPopular: [object];
+  dataUpcoming: [object];
+}
+
+export function TabsSortBy({ dataTrending, dataPopular, dataUpcoming }: Types) {
   const [data, setData] = React.useState(dataTrending);
   const [colorTrend, setColorTrend] = React.useState("");
   const [colorFire, setColorFire] = React.useState("");
