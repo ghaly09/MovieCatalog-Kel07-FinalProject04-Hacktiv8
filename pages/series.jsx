@@ -23,6 +23,7 @@ export default function Series({ dataTvShows, dataThisWeek }) {
         <TabsSortTvShows
           dataTvShows={dataTvShows}
           dataThisWeek={dataThisWeek}
+          type={"series"}
         />
       </div>
     </section>

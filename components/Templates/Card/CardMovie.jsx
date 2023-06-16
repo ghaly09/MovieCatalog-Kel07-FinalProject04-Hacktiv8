@@ -34,7 +34,7 @@ const CardMovie = ({ urlImage, year, title, rating, id, type, saved }) => {
   };
 
   const handleDetail = () => {
-    type === "tv"
+    type == "tv" || type == "series"
       ? dispatch(fetchDataDetail(`tv/${id}?language=en-US`))
       : dispatch(fetchDataDetail(`movie/${id}?language=en-US`));
 

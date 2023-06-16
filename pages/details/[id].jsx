@@ -74,7 +74,7 @@ export default function Detail() {
             </h3>
             <h3 className="text-2xl font-semibold mt-3 mb-2">Overview</h3>
             <p className="text-[16px] leading-5 font-normal pr-5">
-              {data?.overview}
+              {data?.overview ?? "Haven't given overview yet."}
             </p>
           </div>
           <p className="absolute bottom-16 right-5  text-white">

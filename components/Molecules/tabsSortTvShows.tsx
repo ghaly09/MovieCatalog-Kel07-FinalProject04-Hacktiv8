@@ -5,9 +5,10 @@ import CardMovie from "../Templates/Card/CardMovie";
 interface Types {
   dataTvShows: [object];
   dataThisWeek: [object];
+  type: string;
 }
 
-export function TabsSortTvShows({ dataTvShows, dataThisWeek }: Types) {
+export function TabsSortTvShows({ dataTvShows, dataThisWeek, type }: Types) {
   const [data, setData] = React.useState(dataTvShows);
   const [colorTrend, setColorTrend] = React.useState("");
   const [colorFire, setColorFire] = React.useState("");
@@ -57,7 +58,7 @@ export function TabsSortTvShows({ dataTvShows, dataThisWeek }: Types) {
             year={film?.first_air_date}
             rating={film?.vote_average}
             id={film?.id}
-            type={film?.media_type}
+            type={type}
             key={film?.id}
             saved={undefined}
           />
