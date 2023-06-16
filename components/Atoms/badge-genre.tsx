@@ -1,6 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import React from "react";
 
-export function BadgeGenre({ text }) {
+interface Text {
+  text: string;
+}
+
+export function BadgeGenre({ text }: Text) {
   return <Badge>{text}</Badge>;
 }
