@@ -20,7 +20,7 @@ This is The Final Project for Hacktiv8 by Making The Web Movie Catalog using NEX
 - Tailwind CSS
 - JavaScript & TypeScript
 - Self Components
-- API from https://www.omdbapi.com/
+- API from https://www.themoviedb.org/
 
 ## Preview
 
