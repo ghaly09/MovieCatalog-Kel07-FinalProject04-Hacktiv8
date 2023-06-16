@@ -1,7 +1,9 @@
 import { BadgeGenre } from "@/components/Atoms/badge-genre";
 import CardMovie from "@/components/Templates/Card/CardMovie";
 import Image from "next/image";
+import { fontSans } from "@/lib/fonts";
 import { useRouter } from "next/router";
+import SkeletonDetail from "@/components/Molecules/skeletonDetail";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -15,13 +17,13 @@ export default function Detail() {
     "https://wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg"
   }`;
 
-  const currentDate = new Date(data?.release_date);
+  const currentDate = new Date(data?.release_date ?? data?.first_air_date);
   const year = currentDate.getFullYear();
 
   return (
-    <div className="mt-8 mb-60">
+    <div className={`mt-8 mb-60 ${fontSans.className}`}>
       {loading === true ? (
-        <h3 className="text-center text-3xl">LOADING...</h3>
+        <SkeletonDetail />
       ) : (
         <div className="relative">
           <Image
@@ -46,7 +48,7 @@ export default function Detail() {
             />
           </div>
           <div className="absolute top-[50px] left-[460px] font-bold text-3xl text-white">
-            {data?.title}{" "}
+            {data?.title ?? data?.name}{" "}
             <span className="font-normal text-slate-200">({year})</span>
             <div className="flex flex-row gap-1 mt-3">
               <p className="text-lg font-light border-[1px] h-[28px] w-[29px] text-center ">

@@ -39,7 +39,7 @@ export const Navbar = () => {
 
         {/* Navbar Link */}
         <NavLink text={"Home"} link={"/"} />
-        <NavLink text={"Movie"} link={"/movie"} />
+        <NavLink text={"TV Shows"} link={"/tv-shows"} />
         <NavLink text={"Series"} link={"/series"} />
       </div>
 

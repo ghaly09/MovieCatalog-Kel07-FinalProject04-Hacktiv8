@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const CardMovie = ({ urlImage, year, title, rating, id, saved }) => {
+const CardMovie = ({ urlImage, year, title, rating, id, type, saved }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const savedID = useSelector((state) => state.favorite.saved);
@@ -34,7 +34,10 @@ const CardMovie = ({ urlImage, year, title, rating, id, saved }) => {
   };
 
   const handleDetail = () => {
-    dispatch(fetchDataDetail(`movie/${id}?language=en-US`));
+    type === "tv"
+      ? dispatch(fetchDataDetail(`tv/${id}?language=en-US`))
+      : dispatch(fetchDataDetail(`movie/${id}?language=en-US`));
+
     router.push(`/details/${id}`);
   };
 
@@ -74,7 +77,9 @@ const CardMovie = ({ urlImage, year, title, rating, id, saved }) => {
       </button>
       <div className="flex flex-col py-4 ml-4 flex-1">
         <h4 className="font-semibold text-[20px]">{title}</h4>
-        <p className="text-sm text-black">{releaseDate}</p>
+        <p className="text-sm text-black">
+          {year === undefined ? " " : releaseDate}
+        </p>
       </div>
     </div>
   );

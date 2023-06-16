@@ -77,6 +77,7 @@ export function TabsSortBy({ dataTrending, dataPopular, dataUpcoming }: Types) {
             year={film?.release_date}
             rating={film?.vote_average}
             id={film?.id}
+            type={film?.media_type}
             key={film?.id}
             saved={undefined}
           />
