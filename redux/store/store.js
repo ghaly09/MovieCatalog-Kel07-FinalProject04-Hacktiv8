@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
-// import storage from "redux-persist/lib/storage";
 import storageSession from "redux-persist/lib/storage/session";
 import { createWrapper } from "next-redux-wrapper";
 import searchReducer from "../slices/slice-search";
