@@ -12,6 +12,10 @@ This is The Final Project for Hacktiv8 by Making The Web Movie Catalog using NEX
 | Laili Cahyani     | RCTN-KS07-007 |
 | Dika Rahman Rifai | RCTN-KS07-018 |
 
+## The Result Preview
+
+https://github.com/ghaly09/MovieCatalog-Kel07-FinalProject04-Hacktiv8/assets/60167960/94628a27-c06f-43ba-b45c-063750951988
+
 ## 🛠️ Tech Stack & Tools
 
 - Next.Js
@@ -21,8 +25,6 @@ This is The Final Project for Hacktiv8 by Making The Web Movie Catalog using NEX
 - JavaScript & TypeScript
 - Self Components
 - API from https://www.themoviedb.org/
-
-## Preview
 
 ## Getting Started
 
