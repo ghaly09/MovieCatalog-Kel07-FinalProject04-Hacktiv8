@@ -13,7 +13,8 @@ This is The Final Project for Hacktiv8 by Making The Web Movie Catalog using NEX
 | Dika Rahman Rifai | RCTN-KS07-018 |
 
 ## The Result Preview
-For a Better Experience please use Laptop or Desktop Device, deployment link: [https://moviecat-fp04-kel07-hacktiv8.vercel.app](https://moviecat-hacktiv8.vercel.app)
+For a Better Experience please use Laptop or Desktop Device, deployment link: 
+[https://moviecat-hacktiv8.vercel.app](https://moviecat-fp04-kel07-hacktiv8.vercel.app)
 
 or you can play this video for preview:
 
