@@ -4,7 +4,7 @@ import React from "react";
 export default function NavLink({ text, link }) {
   return (
     <Link
-      className={`font-semibold text hover:text-[#00A8A3] hover:border-b-4 hover:border-[#00A8A3] px-3 py-4 
+      className={`font-semibold text-[14px] sm:text-base hover:text-[#00A8A3] hover:border-b-4 hover:border-[#00A8A3] px-3 py-4 
           ActiveNav`}
       href={link}
     >
