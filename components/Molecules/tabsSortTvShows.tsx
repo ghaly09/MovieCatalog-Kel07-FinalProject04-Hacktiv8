@@ -15,7 +15,7 @@ export function TabsSortTvShows({ dataTvShows, dataThisWeek, type }: Types) {
 
   return (
     <section>
-      <Tabs defaultValue="This Day" className="w-[400px] mb-4 mt-16">
+      <Tabs defaultValue="This Day" className="max-w-[400px] mb-4 mt-16">
         <TabsList className="grid w-full grid-cols-2 h-[50px]">
           <TabsTrigger
             className="h-[38px]"
