@@ -12,9 +12,9 @@ const poppins = Poppins({
 export default function Home({ dataTrending, dataPopular, dataUpcoming }) {
   return (
     <section
-      className={`flex min-h-screen flex-col items-center justify-between ${poppins.className}`}
+      className={`flex flex-col min-h-screen items-center justify-between ${poppins.className} px-3`}
     >
-      <div className="container grid items-center pb-8 pt-6 md:py-10">
+      <div className="md:container grid items-center pb-8 pt-6 md:py-10">
         <div className="flex flex-col items-start gap-2">
           <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl mb-4">
             Welcome.
