@@ -16,7 +16,7 @@ export function TabsSortBy({ dataTrending, dataPopular, dataUpcoming }: Types) {
 
   return (
     <section>
-      <Tabs defaultValue="trending" className="w-[400px] mb-4 mt-16">
+      <Tabs defaultValue="trending" className="max-w-[400px] mb-4 mt-16">
         <TabsList className="grid w-full grid-cols-3 h-[50px]">
           <TabsTrigger
             className="h-[38px]"
